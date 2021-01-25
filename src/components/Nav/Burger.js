@@ -38,6 +38,8 @@ const StyledBurger = styled.div`
     }
   }
   @media (max-width: 768px) {
+    top: 20px;
+    right: 20px;
     div {
     background-color: ${({ open }) => open ? 'white' : 'black'};
     }

@@ -10,6 +10,11 @@ display: flex;
   background-color: #f4f9fc;
   margin: 20px;
 
+  @media (max-width: 768px) {
+    height: 100vh;
+    margin: 0;
+  }
+
 `;
 
 const IndexPage = () => (

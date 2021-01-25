@@ -14,6 +14,7 @@ const NavContainer = styled.nav`
 
 const Logo = styled.div`
   font-size: 1.5rem;
+  color: #0F1C61;
 `;
 
 const Nav = () => {
