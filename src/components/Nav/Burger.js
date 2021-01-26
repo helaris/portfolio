@@ -7,9 +7,9 @@ const StyledBurger = styled.div`
   display: none;
   width: 2rem;
   height: 2rem;
-  position: fixed;
+  position: absolute;
   top: 45px;
-  right: 70px;
+  right: 65px;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;

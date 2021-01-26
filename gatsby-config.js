@@ -38,6 +38,15 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:300,400,500, 600, 700`,
+        ],
+        display: 'swap'
+      }
+    },
     `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
