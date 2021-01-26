@@ -5,13 +5,21 @@ import Helari from "../../images/Helari.svg";
 
 const About = () => {
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <section className="about-text">
-        <h1>about me.</h1>
-        <p>I'm a Full-Stack developer based in Norway.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat architecto adipisci ipsa veniam consequatur laboriosam soluta distinctio qui expedita libero, perspiciatis est sint repellat nisi vero in odio accusamus eveniet.</p>
+        <h1 data-sal="slide-up"
+          data-sal-delay="300"
+        >about me.</h1>
+        <p data-sal="slide-up"
+          data-sal-delay="300"
+        >I'm a Full-Stack developer based in Norway.</p>
+        <p data-sal="slide-up"
+          data-sal-delay="300"
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat architecto adipisci ipsa veniam consequatur laboriosam soluta distinctio qui expedita libero, perspiciatis est sint repellat nisi vero in odio accusamus eveniet.</p>
       </section>
-      <img src={Helari} alt="" />
+      <img src={Helari} alt="" data-sal="slide-left"
+        data-sal-delay="300"
+      />
     </AboutContainer>
   )
 }

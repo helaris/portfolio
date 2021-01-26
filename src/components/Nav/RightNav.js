@@ -48,7 +48,7 @@ const NavLinks = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <NavLinks open={open}>
-      <li>About</li>
+      <li><a href="#about">About</a></li>
       <li>Skills</li>
       <li>Work</li>
     </NavLinks>
