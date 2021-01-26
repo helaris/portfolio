@@ -11,11 +11,11 @@ img {
   width: 100%;
   height: auto;
 }
-`;
 
-export const AboutText = styled.section`
+.about-text {
   display: flex;
   flex-direction: column;
+
 
   h1 {
   font-size: 4rem;
@@ -37,5 +37,21 @@ p {
   line-height: 1.5;
   font-size: 1.25rem;
   /* padding: 10px 20px 10px 0; */
+}
+}
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    order: 1;
+    padding: 20px;
+  }
+
+  .about-text {
+    order: 2;
+    align-items: center;
+  }
 }
 `;
