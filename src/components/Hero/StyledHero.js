@@ -1,16 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
-import ParticlesBackground from './Particles';
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { GoMarkGithub } from "react-icons/go";
-import { AiFillLinkedin } from "react-icons/ai";
 
-
-
-const HeroContainer = styled.section`
+export const HeroContainer = styled.section`
   display: flex;
   flex-direction: column;
-  min-height: 85vh;
+  min-height: 80vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -67,32 +60,4 @@ const HeroContainer = styled.section`
       }
     }
   }
-  @media (max-width: 768px) {
-    .social {
-      display: none;
-    }
-  }
-  `;
-
-const Hero = () => {
-  return (
-    <HeroContainer>
-      <ParticlesBackground />
-      <h1>Hello. I'm Helari</h1>
-      <p>Welcome to my portfolio</p>
-      <div className="arrow">
-        <MdKeyboardArrowDown />
-      </div>
-      <div className="social">
-        <a href="https://github.com/helaris" target="_blank" rel="noreferrer">
-          <GoMarkGithub />
-        </a>
-        <a href="https://www.linkedin.com/in/helarisosi/" target="_blank" rel="noreferrer">
-          <AiFillLinkedin />
-        </a>
-      </div>
-    </HeroContainer>
-  )
-}
-
-export default Hero
+`;

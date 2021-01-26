@@ -8,8 +8,8 @@ const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: absolute;
-  top: 45px;
-  right: 65px;
+  top: 20;
+  right: 0;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
@@ -44,10 +44,10 @@ const StyledBurger = styled.div`
     background-color: ${({ open }) => open ? 'white' : 'black'};
     }
   }
-  @media (min-width: 1480px) {
+  /* @media (min-width: 1480px) {
     top: 55px;
     right: 70px;
-  }
+  } */
 `
 
 const Burger = () => {

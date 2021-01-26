@@ -7,16 +7,9 @@ import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height:calc(100vh - 40px);
-  background-color: #f4f9fc;
-  
-
-  @media (max-width: 768px) {
-    height: 100vh;
-    margin: 0;
-  }
+  /* display: flex;
+  flex-direction: column; */
+  /* background-color: #f4f9fc; */
 
 `;
 

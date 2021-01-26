@@ -10,13 +10,15 @@ const NavContainer = styled.nav`
   align-items: center;
   padding: 10px;
   margin: 0 auto;
-
-
+  position: relative;
 `;
 
 const Logo = styled.div`
   font-size: 1.5rem;
   color: #0F1C61;
+  border: 2px solid #0F1C61;
+  border-radius: 3px;
+  padding: 10px
 `;
 
 const Nav = () => {

@@ -14,9 +14,16 @@ const NavLinks = styled.ul`
 
 
   li {
-    padding: 10px;
+    padding: 10px 20px;
     text-transform: uppercase;
     display: ${({ open }) => open ? 'block' : 'none'};
+
+    &:hover {
+      background-color: #0F1C61;
+      color: #fff;
+      transition: all 0.2s ease-in;
+      border-radius: 10px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -41,7 +48,7 @@ const NavLinks = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <NavLinks open={open}>
-      <li>About Me</li>
+      <li>About</li>
       <li>Skills</li>
       <li>Work</li>
     </NavLinks>
