@@ -8,7 +8,7 @@ const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 40px;
+  top: 45px;
   right: 70px;
   display: flex;
   justify-content: space-around;
@@ -43,6 +43,10 @@ const StyledBurger = styled.div`
     div {
     background-color: ${({ open }) => open ? 'white' : 'black'};
     }
+  }
+  @media (min-width: 1480px) {
+    top: 55px;
+    right: 70px;
   }
 `
 

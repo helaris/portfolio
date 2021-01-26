@@ -10,6 +10,8 @@ const NavLinks = styled.ul`
   opacity: ${({ open }) => open ? '1' : '0'};
   transition: transform 0.3s linear;
   color: #0F1C61;
+  font-size: 1.25rem;
+
 
   li {
     padding: 10px;

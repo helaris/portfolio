@@ -10,6 +10,8 @@ const NavContainer = styled.nav`
   align-items: center;
   padding: 10px;
   margin: 0 auto;
+
+
 `;
 
 const Logo = styled.div`

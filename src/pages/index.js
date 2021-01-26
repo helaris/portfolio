@@ -2,10 +2,12 @@ import React from "react"
 import styled from "styled-components";
 import SEO from "../components/seo"
 import GlobalStyle from '../styles/Global';
-import Header from '../components/Header/Header';
+import Nav from "../components/Nav/Nav";
+import Hero from "../components/Hero/Hero";
 
 const Container = styled.div`
 display: flex;
+flex-direction: column;
   height:95vh;
   background-color: #f4f9fc;
   margin: 20px;
@@ -21,7 +23,8 @@ const IndexPage = () => (
   <Container>
     <SEO title="Home" />
     <GlobalStyle />
-    <Header />
+    <Nav />
+    <Hero />
   </Container>
 )
 
