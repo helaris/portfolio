@@ -5,6 +5,7 @@ import GlobalStyle from '../styles/Global';
 import Nav from "../components/Nav/Nav";
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
+import Skills from "../components/skills/Skills";
 
 const Container = styled.div`
   /* display: flex;
@@ -20,6 +21,7 @@ const IndexPage = () => (
     <Nav />
     <Hero />
     <About />
+    <Skills />
   </Container>
 )
 

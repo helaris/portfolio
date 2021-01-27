@@ -9,18 +9,18 @@ const Hero = () => {
   return (
     <HeroContainer>
       <ParticlesBackground />
-      <h1 data-sal="slide-down"
-        data-sal-delay="200">Hello. I'm Helari</h1>
-      <p data-sal="slide-up"
-        data-sal-delay="200">Welcome to my portfolio</p>
+      <h1 data-sal="slide-down" data-sal-delay="300">
+        Hello. I'm Helari
+      </h1>
+      <p data-sal="slide-up" data-sal-delay="400">Welcome to my portfolio</p>
       <div className="arrow">
-        <MdKeyboardArrowDown />
+        <MdKeyboardArrowDown data-sal="slide-up" data-sal-delay="500" />
       </div>
-      <div className="social">
-        <a href="https://github.com/helaris" target="_blank" rel="noreferrer">
+      <div className="social" data-sal="slide-up" data-sal-delay="400">
+        <a data-sal="slide-up" data-sal-delay="500" href="https://github.com/helaris" target="_blank" rel="noreferrer">
           <GoMarkGithub />
         </a>
-        <a href="https://www.linkedin.com/in/helarisosi/" target="_blank" rel="noreferrer">
+        <a data-sal="slide-up" data-sal-delay="600" href="https://www.linkedin.com/in/helarisosi/" target="_blank" rel="noreferrer">
           <AiFillLinkedin />
         </a>
       </div>

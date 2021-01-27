@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-max-width: 1200px;
-margin: 10px auto;
+/* max-width: 1200px; */
+/* margin: 10px auto; */
+padding: 70px;
 display: flex;
 justify-content: center;
 align-items: center;
 
 img {
-  width: 100%;
   height: auto;
+  flex: 1;
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
+  flex: 1;
 
 
   h1 {
@@ -33,7 +35,7 @@ img {
 }
 
 p {
-  width: 80%;
+  /* width: 80%; */
   line-height: 1.5;
   font-size: 1.25rem;
   /* padding: 10px 20px 10px 0; */

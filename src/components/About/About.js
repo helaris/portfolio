@@ -17,11 +17,9 @@ const About = () => {
           data-sal-delay="300"
         >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat architecto adipisci ipsa veniam consequatur laboriosam soluta distinctio qui expedita libero, perspiciatis est sint repellat nisi vero in odio accusamus eveniet.</p>
       </section>
-      <img src={Helari} alt="" data-sal="slide-left"
-        data-sal-delay="300"
-      />
+      <img src={Helari} alt="" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-back" />
     </AboutContainer>
   )
 }
 
-export default About
+export default About;

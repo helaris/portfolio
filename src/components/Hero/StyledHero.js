@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeroContainer = styled.section`
 display: flex;
 flex-direction: column;
-min-height: 85vh;
+min-height: 80vh;
 justify-content: center;
 align-items: center;
 text-align: center;
