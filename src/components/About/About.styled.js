@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-max-width: 1200px;
-margin: 10px auto;
+/* padding: 70px; */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -10,11 +9,15 @@ align-items: center;
 img {
   width: 100%;
   height: auto;
+  margin: 0;
+  /* padding: 0; */
+  /* flex: 1; */
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
+  /* flex: 1; */
 
 
   h1 {
@@ -33,7 +36,7 @@ img {
 }
 
 p {
-  width: 80%;
+  /* width: 80%; */
   line-height: 1.5;
   font-size: 1.25rem;
   /* padding: 10px 20px 10px 0; */
@@ -43,6 +46,8 @@ p {
 @media (max-width: 768px) {
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  
 
   img {
     order: 1;
@@ -52,6 +57,10 @@ p {
   .about-text {
     order: 2;
     align-items: center;
+
+    h1 {
+      font-size: 3.75rem;
+    }
   }
 }
 `;
