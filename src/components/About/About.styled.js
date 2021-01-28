@@ -9,14 +9,17 @@ justify-content: center;
 align-items: center;
 
 img {
+  width: 100%;
   height: auto;
-  flex: 1;
+  margin: 0;
+  /* padding: 0; */
+  /* flex: 1; */
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  /* flex: 1; */
 
 
   h1 {

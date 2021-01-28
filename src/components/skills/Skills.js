@@ -8,6 +8,8 @@ const SkillsWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
 
   h1 {
     font-size: 4rem;
@@ -24,7 +26,7 @@ const TechWrapper = styled.div`
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 20px;
   justify-content: center;
-
+  margin: 20px 0;
   svg {
     margin: 0 10px;
     border: 3px solid #0F1C61;
@@ -38,9 +40,15 @@ const TechWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
+    &:hover{
+      transform: scale(1.1);
+      transition: all 0.2s;
+    }
+
     span {
       margin-top: 5px;
     }
+
   }
 
 
@@ -49,80 +57,85 @@ const TechWrapper = styled.div`
     margin: 0;
     border: 3px solid #0F1C61;
     border-radius: 10px;
-    padding: 13px;
+    padding: 11px 14px;
     font-weight: 400;
 
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
 `;
 
 
 const Skills = () => {
   return (
     <SkillsWrapper>
-      <h1>Skills and tools</h1>
-      <p>Here are some of the technologies and tools I've been working with.</p>
+      <h1 data-sal="slide-up" data-sal-delay="300">Skills and tools</h1>
+      <p data-sal="slide-up" data-sal-delay="300">Here are some of the technologies and tools I've been working with.</p>
       <TechWrapper>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="400">
           <SiHtml5 />
           <span>HTML</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-rigt" data-sal-delay="300">
           <SiCss3 />
           <span>CSS</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="200">
           <SiJavascript />
           <span>JavaScript</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="100">
           <SiReact />
           <span>ReactJS</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="100">
           <SiGatsby />
           <span>Gatsby</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="200">
           <SiIonic />
           <span>Ionic</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="300">
           <SiNodeDotJs />
           <span>NodeJS</span>
         </div>
-        <div className="icon exp">
+        <div className="icon exp" data-sal="slide-left" data-sal-delay="400">
           <h3>ex</h3>
           <span>ExpressJS</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="400">
           <SiMongodb />
           <span>MongoDB</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="300">
           <SiPostgresql />
           <span>PostgreSQL</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="200">
           <SiGit />
           <span>Git</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-right" data-sal-delay="100">
           <SiGithub />
           <span>GitHub</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="100">
           <SiFirebase />
           <span>Firebase</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="200">
           <SiNetlify />
           <span>Netlify</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="300">
           <SiHeroku />
           <span>Heroku</span>
         </div>
-        <div className="icon">
+        <div className="icon" data-sal="slide-left" data-sal-delay="400">
           <SiGraphql />
           <span>GraphQL</span>
         </div>
