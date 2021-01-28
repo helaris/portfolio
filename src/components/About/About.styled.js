@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-/* max-width: 1200px; */
-/* margin: 10px auto; */
-padding: 70px;
+/* padding: 70px; */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -48,6 +46,8 @@ p {
 @media (max-width: 768px) {
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  
 
   img {
     order: 1;
@@ -57,6 +57,10 @@ p {
   .about-text {
     order: 2;
     align-items: center;
+
+    h1 {
+      font-size: 3.75rem;
+    }
   }
 }
 `;

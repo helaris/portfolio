@@ -14,7 +14,7 @@ const About = () => {
         perspiciatis est sint repellat nisi vero in odio accusamus eveniet.
         </p>
       </section>
-      <img src={Helari} alt="" data-sal="slide-up" data-sal-delay="300" />
+      <img src={Helari} alt="" data-sal="slide-up" data-sal-delay="200" />
     </AboutContainer>
   )
 }

@@ -6,8 +6,11 @@ import Nav from "../components/Nav/Nav";
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Skills from "../components/skills/Skills";
+import Projects from "../components/Projects/Projects";
 
 const Container = styled.div`
+max-width: 1500px;
+margin: auto;
   /* display: flex;
   flex-direction: column; */
   /* background-color: #f4f9fc; */
@@ -22,6 +25,7 @@ const IndexPage = () => (
     <Hero />
     <About />
     <Skills />
+    <Projects />
   </Container>
 )
 

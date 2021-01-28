@@ -61,6 +61,14 @@ p {
   }
 }
 @media (max-width: 768px) {
+  h1 {
+    /* padding: 5px; */
+    font-size: 3.75rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
   .social {
     display: none;
   }

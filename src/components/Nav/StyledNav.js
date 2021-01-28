@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavContainer = styled.nav`
-width: 90%;
+max-width: 90%;
 height: 8vh;
 display: flex;
 justify-content: space-between;
@@ -55,7 +55,7 @@ export const StyledBurger = styled.div`
     }
   }
   @media (max-width: 768px) {
-    top: 20px;
+    top: 25px;
     right: 20px;
     div {
     background-color: ${({ open }) => open ? 'white' : 'black'};
