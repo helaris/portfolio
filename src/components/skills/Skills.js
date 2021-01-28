@@ -20,6 +20,12 @@ const SkillsWrapper = styled.section`
   p {
     font-size: 1.25rem;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
 `;
 
 const TechWrapper = styled.div`
