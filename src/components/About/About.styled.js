@@ -5,6 +5,8 @@ export const AboutContainer = styled.section`
 display: flex;
 justify-content: center;
 align-items: center;
+width: 90%;
+margin: 20px auto;
 
 img {
   width: 100%;
