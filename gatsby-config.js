@@ -33,6 +33,7 @@ module.exports = {
         apiURL: "http://localhost:1337",
         contentTypes: [
           "nav",
+          "project"
         ],
         queryLimit: 1000,
       },
