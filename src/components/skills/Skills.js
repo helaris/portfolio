@@ -79,7 +79,7 @@ const TechWrapper = styled.div`
 const Skills = () => {
   return (
     <SkillsWrapper>
-      <h1 data-sal="slide-up" data-sal-delay="300">Skills and tools</h1>
+      <h1 data-sal="slide-up" data-sal-delay="300">skills and tools.</h1>
       <p data-sal="slide-up" data-sal-delay="300">Here are some of the technologies and tools I've been working with.</p>
       <TechWrapper>
         <div className="icon" data-sal="slide-right" data-sal-delay="400">

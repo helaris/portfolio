@@ -1,6 +1,137 @@
 import React from 'react';
+import styled from 'styled-components';
 import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby';
+
+const ProjectsContainer = styled.div`
+text-align: center;
+  h1 {
+    font-size: 4rem;
+  }
+`;
+
+const ProjectsWrapper = styled.div`
+  display: flex;
+  justify-content: center; 
+
+`;
+
+const ImageContent = styled.div`
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+
+  img {
+    border-radius: 10px;
+  }
+
+  .content-overlay {
+    background: rgba(38, 43, 110, 0.8);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 10px;
+  z-index: 1;
+  }
+
+  &:hover .content-overlay {
+    opacity: 1;
+  }
+
+  .content-details {
+    position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 9999;
+
+  }
+
+  &:hover .content-details{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+
+  &:hover h3, p{
+    z-index: 999;
+    color: #fff;
+  }
+
+  h3, p {
+    color: #fff;
+  }
+
+  .fadeIn-bottom {
+  top: 80%;
+}
+ `
+
+
+
+const Projects = () => {
+  const data = useStaticQuery(query);
+  // console.log(data)
+  const { allStrapiProject: { nodes } } = data;
+  console.log(nodes)
+  return (
+    <ProjectsContainer>
+      <h1>Recent Projects</h1>
+      <ProjectsWrapper>
+        {nodes.map(i => (
+          <ImageContent>
+            <a href="#">
+              <div className="content-overlay"></div>
+              <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
+              <div className="content-details fadeIn-bottom">
+                <h3>{i.title}</h3>
+                <p>{i.shortDesc}</p>
+              </div>
+            </a>
+          </ImageContent>
+        ))}
+        {/* {nodes.map(project => (
+          <h1>
+        ))} */}
+        {/* <Img fluid={nodes[0].image.childImageSharp.fluid} /> */}
+      </ProjectsWrapper>
+    </ProjectsContainer>
+  )
+}
+
+export default Projects;
+{/* <div className="container">
+<h3 class="title">Text fadeIn bottom</h3>
+<div class="content">
+  <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+    <div class="content-overlay"></div>
+    <img class="content-image" src="https://images.unsplash.com/photo-1433360405326-e50f909805b3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=359e8e12304ffa04a38627a157fc3362">
+    <div class="content-details fadeIn-bottom">
+      <h3 class="content-title">This is a title</h3>
+      <p class="content-text">This is a short description</p>
+    </div>
+  </a>
+</div>
+</div> */}
 
 const query = graphql`
 {
@@ -24,32 +155,3 @@ const query = graphql`
     }
   }
 }`;
-
-const Projects = () => {
-  const data = useStaticQuery(query);
-  // console.log(data)
-  const { allStrapiProject: { nodes } } = data;
-  console.log(nodes)
-  return (
-    <div>
-      <h1>Recent Projects</h1>
-      <div className="projects-wrapper">
-        {nodes.map(i => (
-          <>
-            <Img key={i.id} fixed={i.image.childImageSharp.fixed} imgStyle={{ objectFit: 'contain' }} />
-            <h1>{i.title}</h1>
-            {i.stacks.map(s => (
-              <li>{s.title}</li>
-            ))}
-          </>
-        ))}
-        {/* {nodes.map(project => (
-          <h1>
-        ))} */}
-        {/* <Img fluid={nodes[0].image.childImageSharp.fluid} /> */}
-      </div>
-    </div>
-  )
-}
-
-export default Projects
