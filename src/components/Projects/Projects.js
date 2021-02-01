@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image'
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 const ProjectsContainer = styled.div`
 text-align: center;
@@ -45,6 +45,7 @@ const ImageContent = styled.div`
 
   &:hover .content-overlay {
     opacity: 1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
   .content-details {
@@ -99,14 +100,14 @@ const Projects = () => {
       <ProjectsWrapper>
         {nodes.map(i => (
           <ImageContent>
-            <a href="#">
+            <Link to={`/project/${i.title}`}>
               <div className="content-overlay"></div>
               <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
               <div className="content-details fadeIn-bottom">
                 <h3>{i.title}</h3>
                 <p>{i.shortDesc}</p>
               </div>
-            </a>
+            </Link>
           </ImageContent>
         ))}
         {/* {nodes.map(project => (
@@ -146,7 +147,7 @@ const query = graphql`
       }
       image {
         childImageSharp {
-          fixed(height: 300, width: 300) {
+          fixed(height: 400, width: 400) {
             ...GatsbyImageSharpFixed
           }
           id

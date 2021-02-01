@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    ${'' /* max-width: 1400px; */}
     margin: 20px;
     padding: 0;
     font-family: "Montserrat";
