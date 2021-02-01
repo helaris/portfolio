@@ -5,6 +5,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 
 
 const ProjectsContainer = styled.div`
+margin: 50px 0;
 text-align: center;
   h1 {
     font-size: 4rem;
@@ -13,15 +14,18 @@ text-align: center;
 
 const ProjectsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
   
 `;
 
 const ImageContent = styled.div`
   position: relative;
-  margin: 20px;
+  margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
-  width: 100%;
 
   img {
     border-radius: 10px;
@@ -101,7 +105,7 @@ const Projects = () => {
           <ImageContent>
             <Link to={`/project/${i.title}`}>
               <div className="content-overlay"></div>
-              <Img key={i.id} fluid={i.image.childImageSharp.fluid} />
+              <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
               <div className="content-details fadeIn-bottom">
                 <h3>{i.title}</h3>
                 <p>{i.shortDesc}</p>
@@ -109,10 +113,6 @@ const Projects = () => {
             </Link>
           </ImageContent>
         ))}
-        {/* {nodes.map(project => (
-          <h1>
-        ))} */}
-        {/* <Img fluid={nodes[0].image.childImageSharp.fluid} /> */}
       </ProjectsWrapper>
     </ProjectsContainer>
   )
@@ -133,8 +133,8 @@ const query = graphql`
       }
       image {
         childImageSharp {
-          fluid{
-            ...GatsbyImageSharpFluid
+          fixed(width: 300, height: 300){
+            ...GatsbyImageSharpFixed
           }
           id
         }

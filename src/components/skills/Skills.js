@@ -47,11 +47,6 @@ const TechWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
-    &:hover{
-      transform: scale(1.1);
-      transition: all 0.2s;
-    }
-
     span {
       margin-top: 5px;
     }

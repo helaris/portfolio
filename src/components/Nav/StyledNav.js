@@ -91,7 +91,7 @@ export const NavLinks = styled.ul`
       background-color: #0F1C61;
       color: #fff;
       transition: all 0.2s ease-in;
-      border-radius: 10px;
+      border-radius: 4px;
     }
 
     a {
@@ -116,8 +116,6 @@ export const NavLinks = styled.ul`
       color: #fff;
     }
 
-    a{
-      color: inherit;
-    }
+
   }
 `;
