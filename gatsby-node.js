@@ -7,23 +7,25 @@ exports.createPages = async ({ graphql, actions }) => {
   const { data, errors } = await graphql(`
   query ProjectQuery {
     allStrapiProject {
-      nodes {
-        id
-        title
+      edges {
+        node {
+          title
+          strapiId
+        }
       }
     }
   }
   `);
 
   if (errors) console.log('Error recieving data from strapi', errors);
-  const comp = path.resolve('./src/pages/project.js');
-  data.allStrapiProject.nodes.forEach(node => {
+  const projectTemplate = path.resolve('./src/templates/project.js');
+  data.allStrapiProject.edges.forEach(edge => {
     createPage({
-      path: `/project/${node.title}`,
-      component: slash(comp),
+      path: `/project/${edge.node.title}`,
+      component: slash(projectTemplate),
       context: {
-        slug: node.title,
-        id: node.id
+        slug: edge.node.title,
+        strapiId: edge.node.strapiId
       }
     })
   })
