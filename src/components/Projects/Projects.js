@@ -13,8 +13,7 @@ text-align: center;
 
 const ProjectsWrapper = styled.div`
   display: flex;
-  justify-content: center; 
-
+  
 `;
 
 const ImageContent = styled.div`
@@ -22,6 +21,7 @@ const ImageContent = styled.div`
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
+  width: 100%;
 
   img {
     border-radius: 10px;
@@ -94,14 +94,14 @@ const Projects = () => {
   const data = useStaticQuery(query);
   const { allStrapiProject: { nodes } } = data;
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="projects">
       <h1>Recent Projects</h1>
       <ProjectsWrapper>
         {nodes.map(i => (
           <ImageContent>
             <Link to={`/project/${i.title}`}>
               <div className="content-overlay"></div>
-              <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
+              <Img key={i.id} fluid={i.image.childImageSharp.fluid} />
               <div className="content-details fadeIn-bottom">
                 <h3>{i.title}</h3>
                 <p>{i.shortDesc}</p>
@@ -133,8 +133,8 @@ const query = graphql`
       }
       image {
         childImageSharp {
-          fixed(height: 400, width: 400) {
-            ...GatsbyImageSharpFixed
+          fluid{
+            ...GatsbyImageSharpFluid
           }
           id
         }

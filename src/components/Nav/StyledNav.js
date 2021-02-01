@@ -9,6 +9,10 @@ align-items: center;
 padding: 10px;
 margin: 0 auto;
 position: relative;
+
+a {
+  text-decoration: none;
+}
 `;
 
 export const Logo = styled.div`
@@ -92,7 +96,6 @@ export const NavLinks = styled.ul`
 
     a {
       color: inherit;
-      text-decoration: none;
     }
   }
 
