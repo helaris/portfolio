@@ -12,20 +12,13 @@ const SkillsWrapper = styled.section`
   margin: 20px auto;
   width: 90%;
 
-
-  h1 {
-    font-size: 4rem;
-    margin: 0;
-  }
-
   p {
     font-size: 1.25rem;
+    margin-bottom: 30px;
   }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3.75rem;
-    }
+  h1 {
+    margin: 10px;
   }
 `;
 
@@ -64,6 +57,9 @@ const TechWrapper = styled.div`
     font-weight: 400;
 
   }
+  @media (max-width: 1024px) {
+  grid-template-columns: repeat(4, 1fr);
+}
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
