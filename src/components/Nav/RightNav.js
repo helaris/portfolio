@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { NavLinks } from './StyledNav';
+import { NavLinks } from './Nav.styled';
 
 export const query = graphql`
 {

@@ -12,23 +12,58 @@ text-align: center;
   }
 `;
 
-const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center
+const ProjectsWrapper = styled.div.attrs(props => ({
+  className: props.className,
+}))`
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+justify-content: center;
+grid-gap: 10px;
+width: 90%;
+margin: 0 auto;
+  /* & .Personal {
+    grid-area: personal;
+  }
+
+  & .Book {
+    grid-area: book;
+  }
+  & .Netflix {
+    grid-area: netflix;
+  }
+  & .Checklist {
+    grid-area: checklist;
+  } */
   
 `;
 
 const ImageContent = styled.div`
   position: relative;
-  margin: 5px;
-  box-shadow: 0 4px 8px 0 rgba(15, 28, 97, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(15, 28, 97, 0.2); */
   border-radius: 10px;
+
+  h4 {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 25%;
+    transform: translate(-25%);
+    font-size: 1.75rem;
+    color: white;
+    width: 100%;
+  }
+
+  &:hover h4 {
+    display: none;
+  }
 
   img {
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .content-overlay {
@@ -46,6 +81,7 @@ const ImageContent = styled.div`
   transition: all 0.4s ease-in-out 0s;
   border-radius: 10px;
   z-index: 1;
+  margin: 0 auto;
   }
 
   &:hover .content-overlay {
@@ -65,9 +101,9 @@ const ImageContent = styled.div`
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
   z-index: 9999;
 
   }
@@ -107,10 +143,11 @@ const Projects = () => {
       <h1>Recent Projects</h1>
       <ProjectsWrapper>
         {nodes.map(i => (
-          <ImageContent>
+          <ImageContent key={i.strapiId} className={i.title}>
             <Link to={`/project/${i.title}`}>
               <div className="content-overlay"></div>
-              <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
+              <Img fluid={i.cardImage.childImageSharp.fluid} />
+              <h4>{i.title}</h4>
               <div className="content-details fadeIn-bottom">
                 <h3>{i.title}</h3>
                 <p className="test">{i.shortDesc}</p>
@@ -129,21 +166,24 @@ const query = graphql`
 {
   allStrapiProject {
     nodes {
-      id
+      strapiId
       title
       shortDesc
+      longDesc
+      cardImage {
+        childImageSharp {
+          fluid(quality: 100){
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       stacks {
         id
         title
       }
-      image {
-        childImageSharp {
-          fixed(width: 300, height: 300){
-            ...GatsbyImageSharpFixed
-          }
-          id
-        }
-      }
     }
   }
 }`;
+
+
+

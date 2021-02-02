@@ -4,7 +4,7 @@ import ParticlesBackground from './Particles';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GoMarkGithub } from "react-icons/go";
 import { AiFillLinkedin } from "react-icons/ai";
-import { HeroContainer, Hello, Welcome, ArrowDown, SocialButtons } from './StyledHero';
+import { HeroContainer, Hello, Welcome, ArrowDown, SocialButtons } from './Hero.styled';
 
 const Hero = () => {
   return (

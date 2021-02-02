@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledBurger } from './StyledNav';
+import { StyledBurger } from './Nav.styled';
 
 import RightNav from './RightNav';
 

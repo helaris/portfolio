@@ -9,7 +9,8 @@ const SkillsWrapper = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px;
+  margin: 20px auto;
+  width: 90%;
 
 
   h1 {
