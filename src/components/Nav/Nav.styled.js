@@ -65,10 +65,6 @@ export const StyledBurger = styled.div`
     background-color: ${({ open }) => open ? 'white' : 'black'};
     }
   }
-  /* @media (min-width: 1480px) {
-    top: 55px;
-    right: 70px;
-  } */
 `
 
 export const NavLinks = styled.ul`
