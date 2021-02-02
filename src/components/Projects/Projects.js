@@ -24,7 +24,7 @@ const ProjectsWrapper = styled.div`
 const ImageContent = styled.div`
   position: relative;
   margin: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(15, 28, 97, 0.2);
   border-radius: 10px;
 
   img {
@@ -32,7 +32,7 @@ const ImageContent = styled.div`
   }
 
   .content-overlay {
-    background: rgba(38, 43, 110, 0.8);
+    background: rgba(15, 28, 97, 0.8);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -50,7 +50,7 @@ const ImageContent = styled.div`
 
   &:hover .content-overlay {
     opacity: 1;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(15, 28, 97, 0.3);
   }
 
   .content-details {
@@ -85,10 +85,15 @@ const ImageContent = styled.div`
 
   h3, p {
     color: #fff;
+    letter-spacing: 1px;
   }
 
   .fadeIn-bottom {
   top: 80%;
+}
+
+.test {
+  padding: 0px 20px;
 }
  `
 
@@ -108,7 +113,7 @@ const Projects = () => {
               <Img key={i.id} fixed={i.image.childImageSharp.fixed} />
               <div className="content-details fadeIn-bottom">
                 <h3>{i.title}</h3>
-                <p>{i.shortDesc}</p>
+                <p className="test">{i.shortDesc}</p>
               </div>
             </Link>
           </ImageContent>
