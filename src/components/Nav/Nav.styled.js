@@ -9,6 +9,10 @@ align-items: center;
 padding: 10px;
 margin: 0 auto;
 position: relative;
+
+a {
+  text-decoration: none;
+}
 `;
 
 export const Logo = styled.div`
@@ -61,10 +65,6 @@ export const StyledBurger = styled.div`
     background-color: ${({ open }) => open ? 'white' : 'black'};
     }
   }
-  /* @media (min-width: 1480px) {
-    top: 55px;
-    right: 70px;
-  } */
 `
 
 export const NavLinks = styled.ul`
@@ -87,12 +87,11 @@ export const NavLinks = styled.ul`
       background-color: #0F1C61;
       color: #fff;
       transition: all 0.2s ease-in;
-      border-radius: 10px;
+      border-radius: 4px;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
   }
 
@@ -113,8 +112,6 @@ export const NavLinks = styled.ul`
       color: #fff;
     }
 
-    a{
-      color: inherit;
-    }
+
   }
 `;

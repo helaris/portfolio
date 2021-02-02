@@ -9,22 +9,16 @@ const SkillsWrapper = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px;
-
-
-  h1 {
-    font-size: 4rem;
-    margin: 0;
-  }
+  margin: 20px auto;
+  width: 90%;
 
   p {
     font-size: 1.25rem;
+    margin-bottom: 30px;
   }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3.75rem;
-    }
+  h1 {
+    margin: 10px;
   }
 `;
 
@@ -47,11 +41,6 @@ const TechWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
-    &:hover{
-      transform: scale(1.1);
-      transition: all 0.2s;
-    }
-
     span {
       margin-top: 5px;
     }
@@ -68,6 +57,9 @@ const TechWrapper = styled.div`
     font-weight: 400;
 
   }
+  @media (max-width: 1024px) {
+  grid-template-columns: repeat(4, 1fr);
+}
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -78,8 +70,8 @@ const TechWrapper = styled.div`
 
 const Skills = () => {
   return (
-    <SkillsWrapper>
-      <h1 data-sal="slide-up" data-sal-delay="300">Skills and tools</h1>
+    <SkillsWrapper id="skills">
+      <h1 data-sal="slide-up" data-sal-delay="300">skills and tools.</h1>
       <p data-sal="slide-up" data-sal-delay="300">Here are some of the technologies and tools I've been working with.</p>
       <TechWrapper>
         <div className="icon" data-sal="slide-right" data-sal-delay="400">

@@ -1,29 +1,32 @@
 import React from 'react';
-import { HeroContainer } from './StyledHero';
+import { Link } from 'gatsby';
 import ParticlesBackground from './Particles';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GoMarkGithub } from "react-icons/go";
 import { AiFillLinkedin } from "react-icons/ai";
+import { HeroContainer, Hello, Welcome, ArrowDown, SocialButtons } from './Hero.styled';
 
 const Hero = () => {
   return (
     <HeroContainer>
       <ParticlesBackground />
-      <h1 data-sal="slide-down" data-sal-delay="300">
+      <Hello data-sal="slide-down" data-sal-delay="300">
         Hello. I'm Helari
-      </h1>
-      <p data-sal="slide-up" data-sal-delay="400">Welcome to my portfolio</p>
-      <div className="arrow">
-        <MdKeyboardArrowDown data-sal="slide-up" data-sal-delay="500" />
-      </div>
-      <div className="social" data-sal="slide-up" data-sal-delay="400">
+      </Hello>
+      <Welcome data-sal="slide-up" data-sal-delay="400">Welcome to my portfolio</Welcome>
+      <ArrowDown>
+        <Link to="#about">
+          <MdKeyboardArrowDown data-sal="slide-up" data-sal-delay="500" />
+        </Link>
+      </ArrowDown>
+      <SocialButtons data-sal="slide-up" data-sal-delay="400">
         <a data-sal="slide-up" data-sal-delay="500" href="https://github.com/helaris" target="_blank" rel="noreferrer">
           <GoMarkGithub />
         </a>
         <a data-sal="slide-up" data-sal-delay="600" href="https://www.linkedin.com/in/helarisosi/" target="_blank" rel="noreferrer">
           <AiFillLinkedin />
         </a>
-      </div>
+      </SocialButtons>
     </HeroContainer>
   )
 }

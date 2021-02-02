@@ -1,33 +1,31 @@
 import React from 'react';
-import { graphql, useStaticQuery } from "gatsby"
-import { NavLinks } from './StyledNav';
+import { graphql, useStaticQuery, Link } from "gatsby"
+import { NavLinks } from './Nav.styled';
 
-const query = graphql` 
+export const query = graphql`
 {
   allStrapiNav {
-    nodes {
-      link
-      id
-    }
+  nodes {
+    strapiId
+    link
+    path
   }
 }
-
-`
+}`
 
 const RightNav = ({ open }) => {
   const data = useStaticQuery(query);
-  const {
-    allStrapiNav: { nodes: link }
-  } = data;
+  const { allStrapiNav: { nodes: links } } = data;
+
   return (
     <NavLinks open={open}>
-      {link.map(l => (
-        <li key={l.id}>{l.link}</li>
+      {links.map(l => (
+        <li>
+          <Link to={`/${l.path}`} key={l.strapiId}>{l.link}</Link>
+        </li>
       ))}
-      {/* <li data-sal="slide-left" data-sal-delay="300">About</li>
-      <li data-sal="slide-left" data-sal-delay="500">Projects</li> */}
     </NavLinks>
   )
 }
 
-export default RightNav
+export default RightNav;

@@ -1,15 +1,18 @@
 import React from 'react'
-import { NavContainer, Logo } from './StyledNav';
+import { NavContainer, Logo } from './Nav.styled';
 import Burger from './Burger';
+import { Link } from 'gatsby';
 
 
 
 const Nav = () => {
   return (
     <NavContainer>
-      <Logo>
-        HS
+      <Link to="/">
+        <Logo>
+          HS
       </Logo>
+      </Link>
       <Burger />
     </NavContainer>
   )
