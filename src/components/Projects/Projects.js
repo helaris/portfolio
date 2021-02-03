@@ -51,7 +51,7 @@ const query = graphql`
       longDesc
       cardImage {
         childImageSharp {
-          fluid(quality: 100){
+          fluid(quality: 100, maxHeight: 275, maxWidth: 400){
             ...GatsbyImageSharpFluid
           }
         }
