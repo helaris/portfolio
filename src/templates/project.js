@@ -6,6 +6,8 @@ import Nav from '../components/Nav/Nav';
 import GlobalStyle from '../styles/Global';
 import { SiGithub } from "react-icons/si";
 
+import Projects from '../components/Projects/Projects';
+
 
 const ProjectContainer = styled.section`
   max-width: 1300px;
@@ -13,38 +15,12 @@ const ProjectContainer = styled.section`
 `;
 
 const ProjectH1 = styled.h1`
-  margin: 10px 0;
+  margin: 50px 0 10px 0;
 `;
 
 const ProjectP = styled.p`
   width: 70%;
   line-height: 1.5;
-`;
-
-const Wrapper = styled.section.attrs(props => ({
-  className: props.className,
-}))`
-
-  & .Checklist {
-    width: 30%;
-  }
-
-  & .Polka {
-    flex: 1;
-  }
-
-  & .Clone {
-    flex: 1;
-  }
-
-  display: flex;
-  margin: 100px auto;
-  justify-content: center;
-  align-items: flex-start;
-
-  h1 {
-    margin: 0;
-  }
 `;
 
 const StyledImg = styled(Img)`
@@ -53,31 +29,25 @@ const StyledImg = styled(Img)`
   margin-right:50px;
 `;
 
-const StackExplanation = styled.section`
-  flex: 1;
-
-  p {
-    line-height: 1.5;
-  }
-`;
-
 const Ul = styled.ul`
   padding-left: 15px;
+  margin: 0;
+  margin-bottom: 20px;
 `;
 
 const Li = styled.li`
   padding: 5px 0;
+  font-size: 1.25rem;
 `;
 
-const StackOverview = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+const Heading4 = styled.h4`
+  font-size: 1.25rem;
+  margin: 10px 0;
 `;
+
 
 const StackActions = styled.div`
 display: flex;
-  /* margin-left: 20px; */
 `;
 
 const Atag = styled.a`
@@ -106,26 +76,20 @@ const Project = ({ data }) => {
       <GlobalStyle />
       <Nav />
       <ProjectContainer>
+        <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} />
         <ProjectH1>{project.title}</ProjectH1>
         <ProjectP>{project.longDesc}</ProjectP>
-        <Wrapper>
-          <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} />
-          <StackExplanation>
-            <h1>Stack Explanation</h1>
-            <p>{project.stackExplanation}</p>
-            <StackOverview>
-              <Ul>
-                {project.stacks.map(stack => (
-                  <Li>{stack.title}</Li>
-                ))}
-              </Ul>
-              <StackActions>
-                <Atag href={`${project?.github_repo_front}`} target="_blank" rel="noopener noreferrer"><SiGithub />Github</Atag>
-                {project.liveLink && <Atag href={`${project.liveLink}`} target="_blank" rel="noopener noreferrer">Live</Atag>}
-              </StackActions>
-            </StackOverview>
-          </StackExplanation>
-        </Wrapper>
+        <Heading4>Stack :</Heading4>
+        <Ul>
+          {project.stacks.map(stack => (
+            <Li>{stack.title}</Li>
+          ))}
+        </Ul>
+        <StackActions>
+          <Atag href={`${project?.github_repo_front}`} target="_blank" rel="noopener noreferrer"><SiGithub />Github</Atag>
+          {project.liveLink && <Atag href={`${project.liveLink}`} target="_blank" rel="noopener noreferrer">Live</Atag>}
+        </StackActions>
+        <Projects />
       </ProjectContainer>
     </>
   )
