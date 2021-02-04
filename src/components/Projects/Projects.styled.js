@@ -27,7 +27,7 @@ export const ProjectsWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 justify-content: center;
-grid-gap: 15px;
+grid-gap: 20px;
 width: 90%;
 margin: 0 auto;
 

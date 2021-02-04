@@ -17,13 +17,17 @@ import {
 const Projects = () => {
   const data = useStaticQuery(query);
   const { allStrapiProject: { nodes } } = data;
+
+  const removeSpaces = (title) => title.split(" ").join("");
+
+
   return (
     <ProjectsContainer id="projects">
-      <ProjectsHeader>Recent projects</ProjectsHeader>
+      <ProjectsHeader data-sal="slide-up" data-sal-delay="300">Recent projects</ProjectsHeader>
       <ProjectsWrapper>
         {nodes.map(i => (
-          <ImageContent key={i.strapiId} className={i.title}>
-            <Link to={`/project/${i.title}`}>
+          <ImageContent key={i.strapiId} className={i.title} data-sal="slide-up" data-sal-delay="200">
+            <Link to={`/project/${removeSpaces(i.title)}`}>
               <ContentOverlay />
               <StyledImg fluid={i.cardImage.childImageSharp.fluid} />
               <CardTitle>{i.title}</CardTitle>

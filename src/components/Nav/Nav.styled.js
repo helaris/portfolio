@@ -35,7 +35,7 @@ export const StyledBurger = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   cursor: pointer;
-  z-index: 5;
+  z-index: 421;
 
 
   div {
@@ -52,6 +52,8 @@ export const StyledBurger = styled.div`
     &:nth-child(2){
       transform: ${({ open }) => open ? 'translateX(0)' : 'translatX(100%)'};
       opacity: ${({ open }) => open ? '0' : '1'};
+      width: 1.75rem;
+      align-self: flex-end;
     }
     &:nth-child(3){
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
@@ -107,6 +109,7 @@ export const NavLinks = styled.ul`
     padding-top: 3.5rem;
     margin: 0;
     transition: all 0.3s ease-in-out;
+    z-index: 420;
 
     li {
       color: #fff;

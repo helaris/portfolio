@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Nav from '../components/Nav/Nav';
 import GlobalStyle from '../styles/Global';
+import { SiGithub } from "react-icons/si";
 
 
 const ProjectContainer = styled.section`
@@ -60,6 +61,43 @@ const StackExplanation = styled.section`
   }
 `;
 
+const Ul = styled.ul`
+  padding-left: 15px;
+`;
+
+const Li = styled.li`
+  padding: 5px 0;
+`;
+
+const StackOverview = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const StackActions = styled.div`
+display: flex;
+  /* margin-left: 20px; */
+`;
+
+const Atag = styled.a`
+  border: 3px solid #0F1C61;
+  border-radius: 5px;
+  padding: 12px 28px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    padding-right: 10px;
+    font-size: 1.5rem;
+  }
+`;
+
 const Project = ({ data }) => {
   const { strapiProject: project } = data;
 
@@ -75,11 +113,17 @@ const Project = ({ data }) => {
           <StackExplanation>
             <h1>Stack Explanation</h1>
             <p>{project.stackExplanation}</p>
-            <ul>
-              {project.stacks.map(stack => (
-                <li>{stack.title}</li>
-              ))}
-            </ul>
+            <StackOverview>
+              <Ul>
+                {project.stacks.map(stack => (
+                  <Li>{stack.title}</Li>
+                ))}
+              </Ul>
+              <StackActions>
+                <Atag href={`${project?.github_repo_front}`} target="_blank" rel="noopener noreferrer"><SiGithub />Github</Atag>
+                {project.liveLink && <Atag href={`${project.liveLink}`} target="_blank" rel="noopener noreferrer">Live</Atag>}
+              </StackActions>
+            </StackOverview>
           </StackExplanation>
         </Wrapper>
       </ProjectContainer>
@@ -96,6 +140,8 @@ export const query = graphql`
     title
     longDesc
     stackExplanation
+    github_repo_front
+    liveLink
     stacks {
       id
       title

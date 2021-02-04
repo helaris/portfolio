@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: inherit;
 }
 
-ol, ul {
+${'' /* ol, ul {
   list-style: none;
-}
+} */}
 
 img {
   max-width: 100%;
