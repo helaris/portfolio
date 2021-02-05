@@ -20,8 +20,8 @@ const RightNav = ({ open }) => {
   return (
     <NavLinks open={open}>
       {links.map(l => (
-        <li>
-          <Link to={`/${l.path}`} key={l.strapiId}>{l.link}</Link>
+        <li key={l.strapiId}>
+          <Link to={`${l.path}`}>{l.link}</Link>
         </li>
       ))}
     </NavLinks>

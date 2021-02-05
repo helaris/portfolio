@@ -19,14 +19,17 @@ const ProjectH1 = styled.h1`
 `;
 
 const ProjectP = styled.p`
-  width: 70%;
+  max-width: 70%;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const StyledImg = styled(Img)`
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(15, 28, 97, 0.2);
-  margin-right:50px;
 `;
 
 const Ul = styled.ul`
@@ -43,11 +46,6 @@ const Li = styled.li`
 const Heading4 = styled.h4`
   font-size: 1.25rem;
   margin: 10px 0;
-`;
-
-
-const StackActions = styled.div`
-display: flex;
 `;
 
 const Atag = styled.a`
@@ -68,6 +66,36 @@ const Atag = styled.a`
   }
 `;
 
+const ProjectInfo = styled.section`
+  display: flex;
+  flex-direction:column;
+  margin: 20px 40px;
+
+  @media (max-width: 768px) {
+    margin: 20px 15px;
+    /* & ${ProjectH1} {
+      text-align: center;
+    }
+    & ${ProjectP} {
+      margin: 20px;
+    }
+    */
+    & ${Ul} {
+      margin: 0 5px;
+    } 
+
+    & ${Atag} {
+      margin-top: 20px;
+    }
+  }
+`;
+
+const StackActions = styled.div`
+  display: flex;
+`;
+
+
+
 const Project = ({ data }) => {
   const { strapiProject: project } = data;
 
@@ -77,18 +105,20 @@ const Project = ({ data }) => {
       <Nav />
       <ProjectContainer>
         <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} />
-        <ProjectH1>{project.title}</ProjectH1>
-        <ProjectP>{project.longDesc}</ProjectP>
-        <Heading4>Stack :</Heading4>
-        <Ul>
-          {project.stacks.map(stack => (
-            <Li>{stack.title}</Li>
-          ))}
-        </Ul>
-        <StackActions>
-          <Atag href={`${project?.github_repo_front}`} target="_blank" rel="noopener noreferrer"><SiGithub />Github</Atag>
-          {project.liveLink && <Atag href={`${project.liveLink}`} target="_blank" rel="noopener noreferrer">Live</Atag>}
-        </StackActions>
+        <ProjectInfo>
+          <ProjectH1>{project.title}</ProjectH1>
+          <ProjectP>{project.longDesc}</ProjectP>
+          <Heading4>Stack :</Heading4>
+          <Ul>
+            {project.stacks.map(stack => (
+              <Li>{stack.title}</Li>
+            ))}
+          </Ul>
+          <StackActions>
+            <Atag href={`${project?.github_repo_front}`} target="_blank" rel="noopener noreferrer"><SiGithub />Github</Atag>
+            {project.liveLink && <Atag href={`${project.liveLink}`} target="_blank" rel="noopener noreferrer">Live</Atag>}
+          </StackActions>
+        </ProjectInfo>
         <Projects />
       </ProjectContainer>
     </>
