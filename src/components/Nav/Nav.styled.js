@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const NavContainer = styled.nav`
 max-width: 90%;
@@ -9,10 +10,6 @@ align-items: center;
 padding: 10px;
 margin: 0 auto;
 position: relative;
-
-a {
-  text-decoration: none;
-}
 `;
 
 export const Logo = styled.div`
@@ -21,6 +18,28 @@ color: #0F1C61;
 border: 2px solid #0F1C61;
 border-radius: 3px;
 padding: 10px
+`;
+
+export const Li = styled.li`
+    color: #0F1C61;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    display: ${({ open }) => open ? 'block' : 'none'};
+
+    &:hover {
+      background-color: #0F1C61;
+      color: #fff;
+      transition: all 0.2s ease-in;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 786px) {
+      color: #fff;
+    }
+`;
+
+export const StyledLink = styled(Link)`
+  color: inherit;
 `;
 
 
@@ -79,24 +98,6 @@ export const NavLinks = styled.ul`
   color: #0F1C61;
   font-size: 1.25rem;
 
-
-  li {
-    padding: 10px 20px;
-    text-transform: uppercase;
-    display: ${({ open }) => open ? 'block' : 'none'};
-
-    &:hover {
-      background-color: #0F1C61;
-      color: #fff;
-      transition: all 0.2s ease-in;
-      border-radius: 4px;
-    }
-
-    a {
-      color: inherit;
-    }
-  }
-
   @media (max-width: 768px) {
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     flex-flow: column nowrap;
@@ -110,11 +111,6 @@ export const NavLinks = styled.ul`
     margin: 0;
     transition: all 0.3s ease-in-out;
     z-index: 420;
-
-    li {
-      color: #fff;
-    }
-
 
   }
 `;

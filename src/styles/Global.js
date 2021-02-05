@@ -23,6 +23,10 @@ img {
     font-weight: 600;
   }
 
+  a {
+    text-decoration: none;
+  }
+
 
   @media (max-width: 768px) {
     html, body {

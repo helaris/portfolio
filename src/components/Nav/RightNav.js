@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { NavLinks } from './Nav.styled';
+import { graphql, useStaticQuery } from "gatsby"
+import { NavLinks, Li, StyledLink } from './Nav.styled';
 
 export const query = graphql`
 {
@@ -20,9 +20,9 @@ const RightNav = ({ open }) => {
   return (
     <NavLinks open={open}>
       {links.map(l => (
-        <li key={l.strapiId}>
-          <Link to={`${l.path}`}>{l.link}</Link>
-        </li>
+        <Li key={l.strapiId} open={open}>
+          <StyledLink to={`${l.path}`}>{l.link}</StyledLink>
+        </Li>
       ))}
     </NavLinks>
   )
