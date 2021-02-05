@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (errors) console.log('Error recieving data from strapi', errors);
-  const projectTemplate = path.resolve('./src/templates/project.js');
+  const projectTemplate = path.resolve('./src/templates/Project.js');
   data.allStrapiProject.edges.forEach(edge => {
     createPage({
       path: `/project/${removeSpaces(edge.node.title)}`,

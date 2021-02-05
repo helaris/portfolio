@@ -2,9 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Nav from '../components/Nav/Nav';
-import GlobalStyle from '../styles/Global';
 import { SiGithub } from "react-icons/si";
+import Layout from '../components/Layout';
 
 import Projects from '../components/Projects/Projects';
 
@@ -73,13 +72,7 @@ const ProjectInfo = styled.section`
 
   @media (max-width: 768px) {
     margin: 20px 15px;
-    /* & ${ProjectH1} {
-      text-align: center;
-    }
-    & ${ProjectP} {
-      margin: 20px;
-    }
-    */
+
     & ${Ul} {
       margin: 0 5px;
     } 
@@ -100,9 +93,7 @@ const Project = ({ data }) => {
   const { strapiProject: project } = data;
 
   return (
-    <>
-      <GlobalStyle />
-      <Nav />
+    <Layout>
       <ProjectContainer>
         <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} />
         <ProjectInfo>
@@ -121,7 +112,7 @@ const Project = ({ data }) => {
         </ProjectInfo>
         <Projects />
       </ProjectContainer>
-    </>
+    </Layout>
   )
 }
 

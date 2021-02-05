@@ -6,18 +6,13 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: inherit;
 }
 
-${'' /* ol, ul {
-  list-style: none;
-} */}
-
 img {
   max-width: 100%;
   height: auto;
 }
 
   body {
-    max-width: 1500px;
-    margin: 20px auto;
+    margin: 0;
     font-family: "Montserrat";
     background-color: #f4f9fc;
     color: #0F1C61;

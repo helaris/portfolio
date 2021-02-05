@@ -1,11 +1,12 @@
 import React from 'react'
+import styled from 'styled-components';
 import GlobalStyle from '../styles/Global';
 import Nav from '../components/Nav/Nav';
-import styled from 'styled-components';
+import Footer from '../components/Footer/Footer';
 
 const LayoutContainer = styled.div`
-  max-width: 1500px;
-  margin: auto;
+  /* max-width: 1500px;
+  margin: 0 auto; */
 `;
 
 const Layout = ({ children }) => {
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Nav />
       {children}
+      <Footer />
     </LayoutContainer>
   )
 }

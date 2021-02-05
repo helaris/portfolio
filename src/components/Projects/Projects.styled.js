@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image'
 
 export const ProjectsContainer = styled.div`
-margin: 50px 0;
+margin: 50px 0 100px 0;
 text-align: center;
 `;
 
