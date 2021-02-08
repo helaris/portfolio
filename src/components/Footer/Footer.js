@@ -48,10 +48,15 @@ const StyledLink = styled.a`
 
   svg {
   color: #fff;
-
   }
 `;
 
+const FooterP = styled.p`
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+`;
 const Footer = () => {
   return (
     <FooterContainer>
@@ -63,7 +68,7 @@ const Footer = () => {
           <AiFillLinkedin />
         </StyledLink>
       </SocialWrapper>
-      <p>COPYRIGHT &copy;2021 HELARI SOSI ALL RIGHTS RESERVED</p>
+      <FooterP>COPYRIGHT &copy;2021 HELARI SOSI ALL RIGHTS RESERVED</FooterP>
       <div class="curve">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>

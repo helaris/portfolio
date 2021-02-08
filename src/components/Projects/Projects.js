@@ -29,7 +29,7 @@ const Projects = () => {
           <ImageContent key={i.strapiId} className={i.title} data-sal="slide-up" data-sal-delay="200">
             <Link to={`/project/${removeSpaces(i.title)}`}>
               <ContentOverlay />
-              <StyledImg fluid={i.cardImage.childImageSharp.fluid} />
+              <StyledImg fluid={i.cardImage.childImageSharp.fluid} alt={i.title} />
               <CardTitle>{i.title}</CardTitle>
               <ContentDetails className="fadeIn-bottom">
                 <DetailsH3>{i.title}</DetailsH3>

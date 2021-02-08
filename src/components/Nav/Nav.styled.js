@@ -107,7 +107,7 @@ export const NavLinks = styled.ul`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 230px;
     padding-top: 2.75rem;
     margin: 0;
     transition: all 0.3s ease-in-out;
@@ -139,9 +139,9 @@ export const StickyNav = styled.div`
   }
 
   @media (max-width: 768px){
-    background: none;
+    /* background: none;
     box-shadow: none;
-    transition: none;
+    transition: none; */
     width: 100%;
     position: fixed;
 
@@ -149,15 +149,14 @@ export const StickyNav = styled.div`
     color: white;
   }
 
-  & ${StyledBurger} > div{
+  /* & ${StyledBurger} > div{
     background: ${({ open }) => open ? 'white' : '#0F1C61'};
-  }
+  } */
 
-  & ${Logo} {
+  /* & ${Logo} {
     border: 2px solid #0F1C61;
     color: #0F1C61;
-
-  }
+  } */
 
   }
 `;
