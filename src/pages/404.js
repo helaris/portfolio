@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import SEO from "../components/seo";
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import RickMorty from '../images/mortynrick.png'
@@ -71,6 +72,7 @@ const StyledLink = styled(Link)`
 const Error = () => {
   return (
     <Layout>
+      <SEO title="404" description="Ooops, something went wrong!" />
       <ErrorContainer>
         <ErrorHeading>404</ErrorHeading>
         <RickImg src={RickMorty} alt="Rick and morty" />

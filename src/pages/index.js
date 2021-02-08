@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import SEO from "../components/seo";
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Skills from "../components/skills/Skills";
@@ -14,7 +14,10 @@ if (typeof window !== "undefined") {
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="Home"
+      description="Helari Sosi's portfolio page to display work"
+    />
     <Hero />
     <About />
     <Skills />

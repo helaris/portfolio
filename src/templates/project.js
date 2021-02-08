@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from "../components/seo";
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { SiGithub } from "react-icons/si";
@@ -98,8 +99,9 @@ const Project = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={project.title} description={project.shortDesc} />
       <ProjectContainer>
-        <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} />
+        <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} alt={project.title} />
         <ProjectInfo>
           <ProjectH1>{project.title}</ProjectH1>
           <ProjectP>{project.longDesc}</ProjectP>
@@ -128,6 +130,7 @@ export const query = graphql`
     strapiId
     title
     longDesc
+    shortDesc
     stackExplanation
     github_repo_front
     liveLink
