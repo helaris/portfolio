@@ -9,6 +9,10 @@ align-items: center;
 text-align: center;
 color: #0F1C61;
 position: relative;
+
+@media (max-width: 768px) {
+  min-height: 90vh;
+}
 `;
 
 export const Hello = styled.h1`

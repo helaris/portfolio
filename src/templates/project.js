@@ -99,7 +99,7 @@ const Project = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={project.title} description={project.shortDesc} />
+      <SEO title={project.title} description={project.longDesc} />
       <ProjectContainer>
         <StyledImg fluid={project.bigImg.childImageSharp.fluid} className={project.title} alt={project.title} />
         <ProjectInfo>
