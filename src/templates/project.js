@@ -11,6 +11,10 @@ import Projects from '../components/Projects/Projects';
 const ProjectContainer = styled.section`
   max-width: 1300px;
   margin: 50px auto;
+
+  @media (max-width: 786px) {
+    margin-top: 150px;
+  }
 `;
 
 const ProjectH1 = styled.h1`

@@ -13,7 +13,7 @@ export const query = graphql`
 }
 }`
 
-const RightNav = ({ open }) => {
+const RightNav = ({ open, setOpen }) => {
   const data = useStaticQuery(query);
   const { allStrapiNav: { nodes: links } } = data;
 
@@ -21,7 +21,7 @@ const RightNav = ({ open }) => {
     <NavLinks open={open}>
       {links.map(l => (
         <Li key={l.strapiId} open={open}>
-          <StyledLink to={`${l.path}`}>{l.link}</StyledLink>
+          <StyledLink to={`${l.path}`} onClick={() => setOpen(!open)}>{l.link}</StyledLink>
         </Li>
       ))}
     </NavLinks>

@@ -6,7 +6,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 
 const FooterContainer = styled.footer`
   height: 12vh;
-  background-color: #0F1C61;
+  background-color: #273371;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -15,8 +15,9 @@ const FooterContainer = styled.footer`
   position: relative;
   padding-top: 30px;
   margin: 0;
+  text-align: center;
 
-  .custom-shape-divider-top-1612533605 {
+  .curve {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,14 +26,14 @@ const FooterContainer = styled.footer`
     line-height: 0;
 }
 
-.custom-shape-divider-top-1612533605 svg {
+.curve svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 20px;
 }
 
-.custom-shape-divider-top-1612533605 .shape-fill {
+.curve .shape-fill {
     fill: #f4f9fc;
 }
 `;
@@ -63,7 +64,7 @@ const Footer = () => {
         </StyledLink>
       </SocialWrapper>
       <p>COPYRIGHT &copy;2021 HELARI SOSI ALL RIGHTS RESERVED</p>
-      <div class="custom-shape-divider-top-1612533605">
+      <div class="curve">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
         </svg>
