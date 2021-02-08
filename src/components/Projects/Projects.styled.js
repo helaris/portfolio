@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image'
 
 export const ProjectsContainer = styled.div`
-margin: 50px 0;
+margin: 50px 0 100px 0;
 text-align: center;
 `;
 
@@ -27,7 +27,7 @@ export const ProjectsWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 justify-content: center;
-grid-gap: 15px;
+grid-gap: 20px;
 width: 90%;
 margin: 0 auto;
 

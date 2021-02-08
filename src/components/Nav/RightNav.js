@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { NavLinks } from './Nav.styled';
+import { graphql, useStaticQuery } from "gatsby"
+import { NavLinks, Li, StyledLink } from './Nav.styled';
 
 export const query = graphql`
 {
@@ -13,16 +13,16 @@ export const query = graphql`
 }
 }`
 
-const RightNav = ({ open }) => {
+const RightNav = ({ open, setOpen }) => {
   const data = useStaticQuery(query);
   const { allStrapiNav: { nodes: links } } = data;
 
   return (
     <NavLinks open={open}>
       {links.map(l => (
-        <li>
-          <Link to={`/${l.path}`} key={l.strapiId}>{l.link}</Link>
-        </li>
+        <Li key={l.strapiId} open={open}>
+          <StyledLink to={`${l.path}`} onClick={() => setOpen(!open)}>{l.link}</StyledLink>
+        </Li>
       ))}
     </NavLinks>
   )

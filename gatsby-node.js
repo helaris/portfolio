@@ -1,6 +1,8 @@
 const path = require('path');
 const slash = require('slash');
 
+const removeSpaces = (title) => title.split(" ").join("");
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -18,10 +20,10 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (errors) console.log('Error recieving data from strapi', errors);
-  const projectTemplate = path.resolve('./src/templates/project.js');
+  const projectTemplate = path.resolve('./src/templates/Project.js');
   data.allStrapiProject.edges.forEach(edge => {
     createPage({
-      path: `/project/${edge.node.title}`,
+      path: `/project/${removeSpaces(edge.node.title)}`,
       component: slash(projectTemplate),
       context: {
         slug: edge.node.title,

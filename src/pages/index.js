@@ -1,21 +1,11 @@
 import React from "react"
-import styled from "styled-components";
 import SEO from "../components/seo"
-import GlobalStyle from '../styles/Global';
-import Nav from "../components/Nav/Nav";
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Skills from "../components/skills/Skills";
 import Projects from "../components/Projects/Projects";
+import Layout from "../components/Layout";
 
-const Container = styled.div`
-max-width: 1500px;
-margin: auto;
-  /* display: flex;
-  flex-direction: column; */
-  /* background-color: #f4f9fc; */
-
-`;
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -23,15 +13,13 @@ if (typeof window !== "undefined") {
 }
 
 const IndexPage = () => (
-  <Container>
+  <Layout>
     <SEO title="Home" />
-    <GlobalStyle />
-    <Nav />
     <Hero />
     <About />
     <Skills />
     <Projects />
-  </Container>
+  </Layout>
 )
 
 export default IndexPage
