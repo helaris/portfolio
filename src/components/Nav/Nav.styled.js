@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 
 export const NavContainer = styled.nav`
 max-width: 90%;
-height: 8vh;
+height: 6vh;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 10px;
+padding: 20px 0;
 margin: 0 auto;
 position: relative;
 `;
