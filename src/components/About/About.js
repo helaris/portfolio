@@ -9,9 +9,8 @@ const About = () => {
       <section className="about-text">
         <h1 data-sal="slide-up" data-sal-delay="300">about me.</h1>
         <p data-sal="slide-up" data-sal-delay="300">I'm a Full-Stack developer based in Norway.</p>
-        <p data-sal="slide-up" data-sal-delay="300">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Fugiat architecto adipisci ipsa veniam consequatur laboriosam soluta distinctio qui expedita libero,
-        perspiciatis est sint repellat nisi vero in odio accusamus eveniet.
+        <p data-sal="slide-up" data-sal-delay="300">Improving my skills and expanding my horizon within tech is something I am passionate about. I’m confident working in both team and self-directed settings. Positive attitude,
+        fast learner and love to juggle multiple responsibilities simultaneously.
         </p>
       </section>
       <img src={Helari} alt="Animated person" data-sal="slide-up" data-sal-delay="200" />
