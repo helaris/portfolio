@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../components/seo";
+import styled from 'styled-components';
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Skills from "../components/skills/Skills";
@@ -12,16 +13,23 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
+const ContentWrapper = styled.section`
+  max-width: 1500px;
+  margin: auto;
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO
       title="Home"
       description="Helari Sosi's portfolio page to display work"
     />
-    <Hero />
-    <About />
-    <Skills />
-    <Projects />
+    <ContentWrapper>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+    </ContentWrapper>
   </Layout>
 )
 
