@@ -108,7 +108,7 @@ const Project = ({ data }) => {
           <Heading4>Stack :</Heading4>
           <Ul>
             {project.stacks.map(stack => (
-              <Li>{stack.title}</Li>
+              <Li key={stack.id}>{stack.title}</Li>
             ))}
           </Ul>
           <StackActions>
