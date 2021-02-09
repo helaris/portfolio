@@ -125,8 +125,8 @@ const Project = ({ data }) => {
 export default Project
 
 export const query = graphql`
-  query ProjectTemp($strapiId: String!){
-  strapiProject(strapiId: {eq: $strapiId}) {
+  query ProjectTemplate($strapiId: String!){
+    strapiProject(strapiId: {eq: $strapiId}) {
     strapiId
     title
     longDesc

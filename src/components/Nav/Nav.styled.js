@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 export const NavContainer = styled.nav`
-max-width: 90%;
+max-width: 1350px;
+width: 90%;
 height: 6vh;
 display: flex;
 justify-content: space-between;
