@@ -10,7 +10,7 @@ export const ProjectsHeader = styled.h1`
   margin: 40px 0;
 `;
 
-export const CardTitle = styled.h4`
+export const CardTitle = styled.h3`
     position: absolute;
     text-align: center;
     bottom: 0;
